@@ -12,7 +12,7 @@
     "url": "git+https://github.com/robot-house/node-express-boilerplate"
   },
   "author": "Laurence Sonnenberg @ Robot House",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/robot-house/node-express-boilerplate/issues"
   },

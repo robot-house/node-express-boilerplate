@@ -133,9 +133,14 @@ const updateUser = async (req, res) => {
     });
     await checkItemExists(user, 'user');
 
+    //here
+
     //update given user fields
     for (let attribute in user) {
-      if (req.body[attribute]) {
+      if (
+        !(attribute === 'password' || attribute === 'email') &&
+        req.body[attribute]
+      ) {
         user[attribute] = req.body[attribute];
       }
     }
