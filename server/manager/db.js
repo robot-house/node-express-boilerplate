@@ -67,8 +67,7 @@ const dbSave = async (options) => {
 };
 
 /**
- *  Updates a user's data.
- *  POST object must contain only fields to be updated.
+ *  Creates a space separated string of items in array
  *
  *  @param {Array} array An array of strings.
  *  @returns {String} Returns a space separated concatenated string of items in array.
