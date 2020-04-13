@@ -14,3 +14,5 @@ Boilerplate code for Mongo/Express/Node REST service with simple JWT authenticat
   ```
 
 - Inside the server folder create `config.js`. This file is for any config objects, for example AWS S3 settings
+
+- In your terminal (inside server folder) run `npm run server` to get server up and running with nodemon
