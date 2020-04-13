@@ -2,7 +2,7 @@
 
 Boilerplate code for Mongo/Express/Node REST service with simple JWT authentication. Another database implementation can be used if needed by swapping out the database manager and field validation code.
 
-## To run:
+## To setup and run:
 
 - In your terminal navigate to the `node-express-boilerplate/server` folder and run `npm install`
 - Inside the server folder create a .env file. This file must contain a port number, database url (this project has been set up using MongoDB Atlas) and your jwt secret, eg.:
@@ -14,3 +14,5 @@ Boilerplate code for Mongo/Express/Node REST service with simple JWT authenticat
   ```
 
 - Inside the server folder create `config.js`. This file is for any config objects, for example AWS S3 settings
+
+- In your terminal (inside server folder) run `npm run server` to get server up and running with nodemon
