@@ -133,14 +133,17 @@ const updateUser = async (req, res) => {
     });
     await checkItemExists(user, 'user');
 
-    //here
+    //check and return error if attempt has been made to update email/password
+    //this must be done elsewhere with relevant checks
+    if ('password' in req.body || 'email' in req.body) {
+      return res.status(403).json({
+        errors: [{ msg: 'Email and/or password update is forbidden here' }],
+      });
+    }
 
     //update given user fields
     for (let attribute in user) {
-      if (
-        !(attribute === 'password' || attribute === 'email') &&
-        req.body[attribute]
-      ) {
+      if (req.body[attribute]) {
         user[attribute] = req.body[attribute];
       }
     }
