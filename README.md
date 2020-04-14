@@ -1,6 +1,6 @@
 # node-express-boilerplate
 
-Boilerplate code for Mongo/Express/Node REST service with simple JWT authentication. Another database implementation can be used if needed by swapping out the database manager and field validation code.
+Boilerplate code for Mongo/Express/Node REST service with simple JWT authentication. Another database implementation can be used if needed by swapping out the code for the database manager, connectDb function, and field validation.
 
 ## To setup and run:
 
@@ -13,6 +13,6 @@ Boilerplate code for Mongo/Express/Node REST service with simple JWT authenticat
   JWT_SECRET={YOUR_JWT_SECRET}
   ```
 
-- Inside the server folder create `config.js`. This file is for any config objects, for example AWS S3 settings
+- Inside the server folder create `config.js`. This file is for any config objects, for example AWS S3 settings and will remain empty until needed
 
 - In your terminal (inside server folder) run `npm run server` to get server up and running with nodemon
