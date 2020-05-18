@@ -45,7 +45,6 @@ const login = async (req, res) => {
  *  @param {Response} res The response object.
  */
 const logout = (req, res) => {
-  res.clearCookie('t');
   res.json({ message: 'Sign-out successful!' });
 };
 

@@ -89,8 +89,8 @@ const jwtSign = async (res, user) => {
       id: _id,
     },
   };
-  //expires in 30 days
-  const expires = 2592000;
+  //expires in 24 hours
+  const expires = 86400;
 
   //create and send jwt and user details in response
   jwt.sign(
@@ -99,16 +99,6 @@ const jwtSign = async (res, user) => {
     { expiresIn: expires },
     async (err, token) => {
       if (err) throw err;
-
-      //check number of tokens in token array and remove last one if 3 already exist
-      if (user.tokens.length >= 3) {
-        user.tokens.pop();
-      }
-      //add token and save
-      user.tokens.push(token);
-      await db.dbSave({ item: user });
-
-      res.cookie('t', token, { expire: new Date() + expires });
       res.json({ token, user: { _id, fullName, email } });
     }
   );
