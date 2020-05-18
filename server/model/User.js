@@ -30,7 +30,6 @@ const UserSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    tokens: [String],
     meta: {
       whenCreated: {
         type: Date,
