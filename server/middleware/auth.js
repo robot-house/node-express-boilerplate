@@ -31,15 +31,6 @@ const requireLogin = async (req, res, next) => {
       select: ['-password'],
     });
 
-    //check token belongs to user
-    if (!user || user.tokens.indexOf(token) <= -1) {
-      return res.status(401).json({
-        msg: 'Token does not exist for this user, authorization denied!',
-      });
-    }
-
-    user.tokens = undefined;
-
     //add user to request object
     req.user = user;
 

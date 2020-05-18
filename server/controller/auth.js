@@ -5,7 +5,8 @@ const { dbManager: db } = require('../manager');
 const { fieldValidate, handleError, jwtSign } = require('../util').utils;
 
 /**
- *  Logs a user in.
+ *  Logs a user in. Token will expire in 24 hours.
+ *  To log a user out, remove token from local storage on the front end.
  *
  *  @param {Request} req The request object.
  *  @param {Response} res The response object.
@@ -38,18 +39,6 @@ const login = async (req, res) => {
   }
 };
 
-/**
- *  Logs a user out.
- *
- *  @param {Request} req The request object.
- *  @param {Response} res The response object.
- */
-const logout = (req, res) => {
-  res.clearCookie('t');
-  res.json({ message: 'Sign-out successful!' });
-};
-
 module.exports = {
   login,
-  logout,
 };
