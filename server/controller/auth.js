@@ -24,7 +24,6 @@ const login = async (req, res) => {
       fieldName: 'email',
     });
     if (!user) {
-      console.log(user);
       return res.status(400).json({ errors: [{ msg: 'Invalid credentials' }] });
     }
 
