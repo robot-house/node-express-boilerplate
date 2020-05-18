@@ -22,7 +22,7 @@ const getUsers = async (req, res) => {
     //get all users
     const users = await db.dbFetchAll({
       model: UserModel,
-      select: ['-password', '-tokens'],
+      select: ['-password'],
     });
 
     res.json(users);
@@ -43,7 +43,7 @@ const getUser = async (req, res) => {
     const user = await db.dbFetchById({
       model: UserModel,
       id: req.params.user_id,
-      select: ['-password', '-tokens'],
+      select: ['-password'],
     });
 
     //make sure user exists
@@ -153,7 +153,6 @@ const updateUser = async (req, res) => {
 
     //remove users hashed password
     user.password = undefined;
-    user.tokens = undefined;
 
     res.json({ user });
   } catch (err) {
